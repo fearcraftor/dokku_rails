@@ -2,6 +2,10 @@
 
 Dokku Rails allow to execute commands on your Dokku platform directly from your Ruby on Rails app.
 
+## Changelog
+
+v0.0.2 : Domains management added (create, fetch, remove)
+
 ## Installation
 
 Prerequisites :
