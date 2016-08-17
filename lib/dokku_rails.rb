@@ -13,7 +13,7 @@ require 'dokku_rails/commands/tar'
 module DokkuRails
 
   class Configuration
-    attr_accessor :host, :user
+    attr_accessor :host, :user, :keys
   end
 
   class << self
@@ -27,7 +27,7 @@ module DokkuRails
 
   def self.execute(cmd)
     begin
-      ssh = Net::SSH.start(config.host, config.user)
+      ssh = Net::SSH.start(config.host, config.user, :keys => config.keys)
       res = ssh.exec!(cmd)
       ssh.close
     rescue
